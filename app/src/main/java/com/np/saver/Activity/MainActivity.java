@@ -331,6 +331,7 @@ public class MainActivity extends AppCompatActivity {
         categoryModel11.total_count = 0;
         categoryModel11.push_key = Constants.databaseReference().push().getKey();
 
+
         CategoryModel categoryModel12 = new CategoryModel();
         categoryModel12.name = "Insurance\nCard";
         categoryModel12.image = R.drawable.icon_insurance_card;
