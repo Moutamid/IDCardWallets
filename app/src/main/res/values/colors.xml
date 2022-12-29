@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="purple_200">#142434</color>
+    <color name="purple_500">#142434</color>
+    <color name="purple_700">#142434</color>
+    <color name="teal_200">#FF03DAC5</color>
+    <color name="teal_700">#98BBE0</color>
+    <color name="black">#FF000000</color>
+    <color name="white">#FFFFFFFF</color>
+
+    <color name="AppStart">#2E4B67</color>
+    <color name="Append">#142434</color>
+    <color name="textGreenColor">#FC413F</color>
+    <color name="bgScreen">#E5335372</color>
+    <color name="bgRound">#142434</color>
+    <color name="unseltxt">#919191</color>
+</resources>

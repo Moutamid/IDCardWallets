@@ -1,0 +1,146 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/bgScreen"
+    android:orientation="vertical"
+    tools:context="com.np.saver.Activity.MainActivity">
+
+    <RelativeLayout
+        android:id="@+id/relTool"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/_55sdp">
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_gravity="center_vertical"
+            android:layout_marginLeft="@dimen/_10sdp"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/tvAppNAme"
+                style="@style/myTextviewBold"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:text="@string/title1"
+                android:textColor="@color/textGreenColor"
+                android:textSize="17sp" />
+
+            <TextView
+                style="@style/myTextviewBold"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/_3sdp"
+                android:gravity="center"
+                android:text="@string/title2"
+                android:textColor="@color/white"
+                android:textSize="19sp" />
+        </LinearLayout>
+
+        <ImageView
+            android:id="@+id/ivSetting"
+            android:layout_width="@dimen/_20sdp"
+            android:layout_height="@dimen/_20sdp"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="@dimen/_10sdp"
+            android:src="@drawable/ic_settings" />
+
+        <ImageView
+            android:id="@+id/addnew"
+            android:layout_width="@dimen/_20sdp"
+            android:layout_height="@dimen/_20sdp"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="@dimen/_40sdp"
+            android:layout_toLeftOf="@+id/ivSetting"
+            android:src="@drawable/ic_baseline_add_card_24" />
+        <ImageView
+            android:id="@+id/refresh"
+            android:layout_width="@dimen/_20sdp"
+            android:layout_height="@dimen/_20sdp"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="@dimen/_70sdp"
+            android:layout_toLeftOf="@+id/addnew"
+            android:src="@drawable/ic_baseline_refresh_24" />
+
+
+    </RelativeLayout>
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/relTool"
+        android:fillViewport="true"
+        android:scrollbars="none">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_10sdp"
+                android:layout_marginBottom="@dimen/_10sdp"
+                >
+
+                <FrameLayout
+                    android:id="@+id/frameBanner1"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"/>
+
+                <!--                <ImageView-->
+                <!--                    android:layout_width="wrap_content"-->
+                <!--                    android:src="@drawable/mainicon"-->
+                <!--                    android:scaleType="fitCenter"-->
+                <!--                    android:layout_height="match_parent"/>-->
+            </LinearLayout>
+
+
+            <RelativeLayout
+                android:id="@+id/rel"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_above="@+id/frameBanner"
+                android:layout_marginBottom="@dimen/_40sdp"
+                android:background="@drawable/bg_main_half">
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/rvMainlist"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/_8sdp"
+                    android:layout_marginTop="@dimen/_8sdp"
+                    android:layout_marginEnd="@dimen/_8sdp"
+                    android:nestedScrollingEnabled="false" />
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/rvuserlist"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/rvMainlist"
+                    android:layout_marginStart="@dimen/_8sdp"
+                    android:layout_marginEnd="@dimen/_8sdp"
+                    android:layout_marginBottom="@dimen/_8sdp"
+                    android:nestedScrollingEnabled="false" />
+
+            </RelativeLayout>
+        </LinearLayout>
+
+    </androidx.core.widget.NestedScrollView>
+
+    <FrameLayout
+        android:id="@+id/frameBanner"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true" />
+
+</RelativeLayout>

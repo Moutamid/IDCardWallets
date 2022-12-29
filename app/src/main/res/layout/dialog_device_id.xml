@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_gravity="center"
+    android:background="@color/black"
+    android:gravity="center">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_gravity="center"
+        android:orientation="vertical">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:gravity="center"
+            android:layout_marginTop="@dimen/_15sdp"
+            android:padding="10dp"
+            android:text="Which Device ID you want to use?"
+            android:textColor="@color/textGreenColor"
+            android:textSize="@dimen/_17sdp" />
+
+        <TextView
+            android:id="@+id/currentBtn"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginHorizontal="@dimen/_12sdp"
+            android:layout_marginTop="@dimen/_10sdp"
+            android:background="@drawable/bg_box_main"
+            android:backgroundTint="@color/textGreenColor"
+            android:gravity="center"
+            android:padding="15dp"
+            android:text="Use current device ID"
+            android:textAllCaps="true"
+            android:textColor="@color/white"
+            android:textSize="14sp" />
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_marginTop="@dimen/_15sdp"
+            android:layout_marginBottom="@dimen/_10sdp"
+            android:background="#80FFFFFF" />
+
+        <EditText
+            android:id="@+id/customEt"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/_40sdp"
+            android:layout_marginHorizontal="@dimen/_12sdp"
+            android:elevation="@dimen/_10sdp"
+            android:hint="Enter your custom Device ID"
+            android:inputType="text"
+            android:paddingStart="@dimen/_10sdp"
+            android:background="@color/black"
+            android:paddingRight="@dimen/_10sdp"
+            android:textColor="@color/white"
+            android:textColorHint="@color/white"
+            android:textSize="15sp" />
+
+        <TextView
+            android:id="@+id/customBtn"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginTop="@dimen/_10sdp"
+            android:background="@drawable/bg_box_main"
+            android:backgroundTint="@android:color/holo_green_dark"
+            android:gravity="center"
+            android:layout_marginHorizontal="@dimen/_12sdp"
+            android:padding="15dp"
+            android:text="submit"
+            android:layout_marginBottom="@dimen/_20sdp"
+            android:textAllCaps="true"
+            android:textColor="@color/white"
+            android:textSize="14sp" />
+
+    </LinearLayout>
+</LinearLayout>

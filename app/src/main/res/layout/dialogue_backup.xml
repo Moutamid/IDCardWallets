@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:gravity="center"
+    android:background="@drawable/dialog_bg"
+    android:layout_gravity="center"
+    android:layout_marginLeft="20dp"
+    android:layout_marginRight="20dp">
+<LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:layout_gravity="center">
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textColor="@color/textGreenColor"
+        android:textSize="17dp"
+        android:text="Backup File Name"
+        android:layout_gravity="center"
+        android:gravity="center"
+        android:padding="10dp"/>
+    <EditText
+        android:id="@+id/editname"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/_40sdp"
+        android:background="@drawable/bg_get_started"
+        android:elevation="@dimen/_10sdp"
+        android:hint="Enter Backup File Name"
+        android:inputType="text"
+        android:paddingStart="@dimen/_10sdp"
+        android:paddingRight="@dimen/_10sdp"
+        android:textColor="@color/white"
+        android:layout_margin="@dimen/_12sdp"
+        android:textColorHint="@color/unseltxt"
+        android:textSize="15sp" />
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@color/Append"
+        android:layout_marginTop="10dp"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:orientation="horizontal"
+        android:layout_height="wrap_content"
+        android:layout_margin="8dp"
+       >
+        <TextView
+            android:id="@+id/no"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Cancel"
+            android:layout_weight="1"
+            android:textSize="14dp"
+            android:textColor="@color/white"
+            android:textAllCaps="true"
+            android:background="@drawable/bg_box_main"
+            android:backgroundTint="@color/textGreenColor"
+            android:padding="15dp"
+            android:layout_gravity="center"
+            android:gravity="center"/>
+        <View
+            android:layout_width="1dp"
+            android:layout_height="match_parent"
+            android:layout_marginLeft="5dp"
+            android:layout_marginRight="5dp"
+            android:background="@color/Append"/>
+        <TextView
+            android:id="@+id/yes"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="BackUp"
+            android:layout_weight="1"
+            android:textSize="14dp"
+            android:background="@drawable/bg_box_main"
+            android:backgroundTint="@android:color/holo_green_dark"
+            android:textColor="@color/white"
+            android:textAllCaps="true"
+            android:padding="15dp"
+
+            android:layout_gravity="center"
+            android:gravity="center"/>
+    </LinearLayout>
+</LinearLayout>
+</LinearLayout>

@@ -1,0 +1,3 @@
+
+rootProject.name = "ID Card Wallet"
+include ':app'

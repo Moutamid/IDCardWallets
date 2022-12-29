@@ -1,0 +1,23 @@
+<resources>
+    <string name="app_name">ID Card Saver</string>
+
+    <string name="APP_ID">ca-app-pub-3940256099942544~3347511713</string>
+    <string name="interstitial_ID">ca-app-pub-3940256099942544/1033173712</string>
+    <string name="banner_ID">ca-app-pub-3940256099942544/6300978111</string>
+
+    <string name="title1">ID CARD</string>
+    <string name="Category1">Add New Category</string>
+    <string name="category">Custom Category</string>
+    <string name="title2">SAVER</string>
+    <string name="msgDelete">Are you sure want to delete this video?</string>
+
+    <string name="rateUS">Rate Us</string>
+    <string name="shareApp">Share App</string>
+    <string name="privacy">Privacy Policy</string>
+    <string name="suggestion">Suggestions</string>
+    <string name="more">More Apps</string>
+    <string name="backup">Backup</string>
+    <string name="restore">Restore</string>
+    <string name="secutiry_layout">To Setup App Lock/Change, Click on \"Set Password\" ID Card Wallet Use System Default Security. All Lock Features Available Like :
+        "\n\n"Fingerprint, Passwords, PIN, Patterns, FaceLock, etc.</string>
+</resources>

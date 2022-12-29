@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/_150sdp">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@drawable/shape_bottomsheet_select">
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:src="@drawable/bg_top_bar_dialog"
+                android:layout_height="@dimen/_45sdp"/>
+            <LinearLayout
+                android:id="@+id/lTop"
+                android:layout_width="match_parent"
+                android:orientation="vertical"
+                android:layout_height="@dimen/_45sdp">
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:orientation="vertical"
+                    android:layout_gravity="center"
+                    android:gravity="center"
+                    android:layout_centerVertical="true"
+                    android:layout_height="match_parent">
+                    <TextView
+                        android:text="Alert"
+                        android:textSize="18sp"
+                        style="@style/myTextviewBold"
+                        android:gravity="center"
+                        android:textColor="@color/textGreenColor"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"/>
+
+                </LinearLayout>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_below="@+id/lTop"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/txtDesc"
+                    style="@style/myTextviewBold"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_25sdp"
+                    android:gravity="center"
+                    android:paddingLeft="@dimen/_10sdp"
+                    android:paddingRight="@dimen/_10sdp"
+                    android:text="@string/msgDelete"
+                    android:textColor="@color/white"
+                    android:textSize="14sp" />
+
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/_45sdp"
+                android:layout_alignParentBottom="true"
+                android:orientation="horizontal">
+
+                <LinearLayout
+                    android:id="@+id/ivCloseDelete"
+                    android:layout_width="0dp"
+                    android:layout_height="@dimen/_45sdp"
+                    android:layout_marginLeft="@dimen/_3sdp"
+                    android:layout_marginRight="@dimen/_3sdp"
+                    android:layout_weight="1"
+                    android:gravity="center">
+
+                    <TextView
+                        android:text="Cancel"
+                        android:textSize="14sp"
+                        style="@style/myTextviewBold"
+                        android:gravity="center"
+                        android:textColor="@color/black"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"/>
+                </LinearLayout>
+
+                <View
+                    android:layout_width="@dimen/_2sdp"
+                    android:layout_height="@dimen/_30sdp"
+                    android:layout_gravity="center"
+                    android:background="@color/white" />
+                <LinearLayout
+                    android:id="@+id/ivDoneDelete"
+                    android:layout_width="0dp"
+                    android:layout_height="@dimen/_45sdp"
+                    android:layout_marginLeft="@dimen/_3sdp"
+                    android:layout_marginRight="@dimen/_3sdp"
+                    android:layout_weight="1"
+                    android:gravity="center">
+
+                    <TextView
+                        android:text="Delete"
+                        android:textSize="14sp"
+                        style="@style/myTextviewBold"
+                        android:gravity="center"
+                        android:textColor="@color/textGreenColor"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"/>
+                </LinearLayout>
+            </LinearLayout>
+
+
+        </RelativeLayout>
+    </RelativeLayout>
+
+
+</RelativeLayout>

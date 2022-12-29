@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.np.saver.Activity.SplashActivity">
+
+
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:scaleType="centerCrop"
+        android:src="@drawable/splash_bg" />
+
+    <LinearLayout
+        android:layout_above="@+id/lGetStarted"
+        android:layout_width="@dimen/_250sdp"
+        android:layout_centerHorizontal="true"
+        android:orientation="vertical"
+        android:layout_marginBottom="@dimen/_5sdp"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/title1"
+            style="@style/myTextviewBold"
+            android:textColor="@color/textGreenColor"
+            android:textSize="24sp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/title2"
+            style="@style/myTextviewBold"
+            android:textColor="@color/white"
+            android:textSize="@dimen/_34sdp" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/lGetStarted"
+        android:layout_width="@dimen/_250sdp"
+        android:layout_height="@dimen/_50sdp"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="@dimen/_15sdp"
+        android:background="@drawable/bg_get_started"
+        android:elevation="@dimen/_5sdp"
+        android:visibility="invisible"
+        android:gravity="center">
+
+        <TextView
+            style="@style/myTextviewBold"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Get Started"
+            android:textColor="@color/textGreenColor"
+            android:textSize="18sp"
+            android:textStyle="bold" />
+    </LinearLayout>
+</RelativeLayout>
