@@ -621,6 +621,7 @@ public class SingleCardActivity extends AppCompatActivity {
             options.setFreeStyleCropEnabled(true);
             options.setCompressionFormat(Bitmap.CompressFormat.JPEG);
             Log.e("Picked--)",""+stirn);
+
             UCrop.of(Uri.fromFile((File) list.get(0)), Uri.fromFile(new File(getCacheDir(), stirn))).withOptions(options).withMaxResultSize(16843039, 16843040).start(SingleCardActivity.this);
         }
 

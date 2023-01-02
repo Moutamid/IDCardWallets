@@ -33,10 +33,13 @@ import com.np.saver.Model.CardModel;
 import com.np.saver.R;
 import com.np.saver.Utils.Constants;
 import com.np.saver.databinding.ActivityAddCardBinding;
+import com.np.saver.imagePicker.DefaultCallback;
+import com.np.saver.imagePicker.EasyImage;
 import com.yalantis.ucrop.UCrop;
 
 import java.io.ByteArrayOutputStream;
 import java.io.File;
+import java.util.List;
 
 public class AddCardActivity extends AppCompatActivity {
     private static final String TAG = "AddCardActivity";
@@ -93,8 +96,11 @@ public class AddCardActivity extends AppCompatActivity {
             public void onClick(View view) {
                 Log.d(TAG, "onClick: lCamera");
 
-                Intent cameraIntent = new Intent(android.provider.MediaStore.ACTION_IMAGE_CAPTURE);
-                startActivityForResult(cameraIntent, CAMERA_CODE);
+                /*Intent cameraIntent = new Intent(android.provider.MediaStore.ACTION_IMAGE_CAPTURE);
+                startActivityForResult(cameraIntent, CAMERA_CODE);*/
+
+                EasyImage.openCameraForImage(AddCardActivity.this, CAMERA_CODE);
+
 
                 if (dialogSelectImage != null) {
                     dialogSelectImage.dismiss();
@@ -247,27 +253,74 @@ public class AddCardActivity extends AppCompatActivity {
         }
 
     }
+    Bitmap photo;
+
+    class C06489 extends DefaultCallback {
+        C06489() {
+        }
+
+        public void onImagePickerError(Exception exception, EasyImage.ImageSource imageSource, int i) {
+
+            Log.e("Exception--)",""+exception.getMessage());
+            exception.printStackTrace();
+        }
+
+        public void onImagesPicked(List<File> list, EasyImage.ImageSource imageSource, int i) {
+            String stirn = "SampleCropImage";
+            StringBuilder stringBuilder = new StringBuilder();
+            stringBuilder.append(imageSource);
+            stringBuilder.append(".jpg");
+            stirn = stringBuilder.toString();
+            UCrop.Options options = new UCrop.Options();
+            options.setFreeStyleCropEnabled(true);
+            options.setCompressionFormat(Bitmap.CompressFormat.JPEG);
+            Log.e("Picked--)",""+stirn);
+            UCrop.of(Uri.fromFile((File) list.get(0)), Uri.fromFile(new File(getCacheDir(), stirn)))
+                    .withOptions(options).withMaxResultSize(16843039, 16843040)
+                    .start(AddCardActivity.this);
+        }
+
+        public void onCanceled(EasyImage.ImageSource imageSource, int i) {
+            if (imageSource == EasyImage.ImageSource.CAMERA_IMAGE) {
+                File file = EasyImage.lastlyTakenButCanceledPhoto(getApplicationContext());
+                if (file != null) {
+                    file.delete();
+                }
+            }
+        }
+    }
 
     @Override
     protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
+        EasyImage.handleActivityResult(requestCode, resultCode, data, this, new C06489());
         if (resultCode == RESULT_OK) {
             Log.d(TAG, "onActivityResult: if (resultCode == RESULT_OK) {");
+
+            UCrop.Options options = new UCrop.Options();
+            options.setFreeStyleCropEnabled(true);
+            options.setCompressionFormat(Bitmap.CompressFormat.PNG);
+            options.setCompressionQuality(100);
+
             if (requestCode == GALLERY_CODE) {
                 Log.d(TAG, "onActivityResult: if (requestCode == CODE) {");
                 Uri imageUri = data.getData();
 
-                UCrop.of(imageUri, Uri.fromFile(new File(getCacheDir(), "image.jpg")))
+                UCrop.of(imageUri, Uri.fromFile(new File(getCacheDir(), "image.png")))
+                        .withOptions(options).withMaxResultSize(16843039, 16843040)
                         .start(AddCardActivity.this);
             }
-            if (requestCode == CAMERA_CODE) {
+            /*if (requestCode == CAMERA_CODE) {
                 Log.d(TAG, "onActivityResult: if (requestCode == CODE) {");
-                Bitmap photo = (Bitmap) data.getExtras().get("data");
+                photo = (Bitmap) data.getExtras().get("data");
+
+                Log.d(TAG, "onActivityResult: CAMERA_RESULT: "+data.getExtras().get("data"));
                 Uri imageUri = getImageUri(photo);
 
-                UCrop.of(imageUri, Uri.fromFile(new File(getCacheDir(), "image.jpg")))
+                UCrop.of(imageUri, Uri.fromFile(new File(getCacheDir(), "image.png")))
+                        .withOptions(options).withMaxResultSize(16843039, 16843040)
                         .start(AddCardActivity.this);
-            }
+            }*/
 
             if (requestCode == UCrop.REQUEST_CROP) {
                 Log.d(TAG, "onActivityResult: if (requestCode == UCrop.REQUEST_CROP) {");
