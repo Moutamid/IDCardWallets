@@ -71,6 +71,7 @@ public class ViewCardsActivity extends AppCompatActivity {
                     .putExtra(Constants.IMG_CLICKED, 1));
         });
 
+
         b.imgFront.setOnClickListener(v -> {
             startActivity(new Intent(ViewCardsActivity.this, ViewImageActivity.class)
                     .putExtra(Constants.IMG_CLICKED, 0));
