@@ -17,6 +17,9 @@ public class Constants {
     public static final String CURRENT_POSITION = "CURRENT_POSITION";
     public static final String IS_EDIT = "IS_EDIT";
     public static final String DEVICE_ID = "DEVICE_ID";
+    public static final String BACK = "BACK";
+    public static final String IMG_CLICKED = "IMG_CLICKED";
+    public static final String FRONT = "FRONT";
 
     public static FirebaseAuth auth() {
         return FirebaseAuth.getInstance();

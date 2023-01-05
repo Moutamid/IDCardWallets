@@ -78,7 +78,11 @@ public class ViewImageActivity extends AppCompatActivity {
 
         b.viewPagerViewImage.setAdapter(mViewPagerAdapter);
 
+        b.viewPagerViewImage.setCurrentItem(getIntent().getIntExtra(Constants.IMG_CLICKED, 0), true);
+
         b.ivBack.setOnClickListener(v -> finish());
+
+        b.txtTitle.setText(cardModel.name);
 
         b.ivShare.setOnClickListener(v -> {
             progressDialog.show();

@@ -67,14 +67,15 @@ public class ViewCardsActivity extends AppCompatActivity {
                 .into(b.imgFront);
 
         b.imgBack.setOnClickListener(v -> {
-            startActivity(new Intent(ViewCardsActivity.this, ViewImageActivity.class));
+            startActivity(new Intent(ViewCardsActivity.this, ViewImageActivity.class)
+                    .putExtra(Constants.IMG_CLICKED, 1));
         });
 
         b.imgFront.setOnClickListener(v -> {
-            startActivity(new Intent(ViewCardsActivity.this, ViewImageActivity.class));
+            startActivity(new Intent(ViewCardsActivity.this, ViewImageActivity.class)
+                    .putExtra(Constants.IMG_CLICKED, 0));
         });
 
-        
         b.lDelete.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
